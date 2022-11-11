@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ 'character.list'| translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>{{ 'characters'| translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-item *ngFor="let character of characters" (click)="onShowDetails(character)" >
+      <ion-avatar>
+        <img
+          [alt]="character.name"
+          [src]="character.img"/>
+      </ion-avatar>
+      <label class="ion-padding-start">{{ character.name }}</label>
+    </ion-item>
+  </ion-list>
+</ion-content>
