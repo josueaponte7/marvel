@@ -1,7 +1,8 @@
 {
   "name": "marvel",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

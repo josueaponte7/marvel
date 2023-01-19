@@ -15,9 +15,7 @@
   <ion-list lines="full">
     <ion-item *ngFor="let character of characters" (click)="onShowDetails(character)" >
       <ion-avatar>
-        <img
-          [alt]="character.name"
-          [src]="character.img"/>
+        <img [src]="getImg(character)">
       </ion-avatar>
       <label class="ion-padding-start">{{ character.name }}</label>
     </ion-item>

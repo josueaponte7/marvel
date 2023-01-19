@@ -18,4 +18,9 @@ export class CharacterDetailsPage implements OnInit {
       this.character = this.route.snapshot.data.character;
     }
   }
+  getImg(character: CharacterDto){
+    let img = character.thumbnail.path+'.'+character.thumbnail.extension
+    img = img.replace('http://','https://');
+    return img;
+  }
 }

@@ -12,6 +12,7 @@ import {CharacterDto} from '../../dto/';
 })
 export class HomePage implements OnInit {
   public characters: CharacterDto[] = [];
+  public size = '/standard_amazing';
   constructor(
     private router: Router,
     private marvelApi: MarvelApiService,
@@ -29,5 +30,11 @@ export class HomePage implements OnInit {
   onShowDetails(character: CharacterDto){
     this.dataService.setData(character.id, character);
     this.router.navigate(['/character-details',character.id]);
+  }
+
+  getImg(character: CharacterDto){
+    let img = character.thumbnail.path+'.'+character.thumbnail.extension
+    img = img.replace('http://','https://');
+    return img;
   }
 }
